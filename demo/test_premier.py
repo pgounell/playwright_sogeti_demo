@@ -39,7 +39,7 @@ def test_locator(page: Page):
     submit_button.click()
 
     '''
-    Il existe plusieurs méthodes de type 'get_by', mais la plus reccomandée est 'get_by_role'.
+    Il existe plusieurs méthodes de type 'get_by', mais la plus recomandée est 'get_by_role'.
     De la même manière, il existe beaucoup de roles différents pour identifier les éléments web
     '''
 
