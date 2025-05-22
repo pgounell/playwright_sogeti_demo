@@ -1,5 +1,5 @@
 import pytest
-from playwright.sync_api import Page, expect, sync_playwright
+from playwright.sync_api import Page, expect
 
 '''
 Playwright fonctionne avec pytest, on décore donc une fonction pour préciser
