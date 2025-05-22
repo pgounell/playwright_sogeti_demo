@@ -1,7 +1,6 @@
 import pytest
-from playwright.sync_api import Page
-from .pages.page_instance import basePage
-from .pages.homepage import homePage
+from playwright.sync_api import Page, expect
+from pages.homepage import homePage as hp
 
 
 base_url = "https://practice-automation.com/"
@@ -9,10 +8,20 @@ base_url = "https://practice-automation.com/"
 @pytest.fixture(scope="function", autouse=True)
 def beforeEach(page: Page):
    page.goto(base_url)
-   basepage = basePage(page)
    yield
 
 
 def test_form_fields(page: Page):
-   homepage = homePage()
+   homepage = hp(page)
    homepage.goto_form()
+   expect(page).to_have_url("https://practice-automation.com/form-fields/")
+
+
+def test_modals(page: Page):
+   homepage = hp(page)
+   homepage.goto_modals()
+
+
+def test_click_events(page: Page):
+   homepage = hp(page)
+   homepage.goto_click_events()
