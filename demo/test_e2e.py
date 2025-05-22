@@ -20,8 +20,10 @@ def test_form_fields(page: Page):
 def test_modals(page: Page):
    homepage = hp(page)
    homepage.goto_modals()
+   expect(page).to_have_url("https://practice-automation.com/modals/")
 
 
 def test_click_events(page: Page):
    homepage = hp(page)
    homepage.goto_click_events()
+   expect(page).to_have_url("https://practice-automation.com/click-events/")
