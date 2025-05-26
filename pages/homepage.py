@@ -12,9 +12,12 @@ class homePage():
 
     def goto_form(self):
         self.form_button.click()
+        expect(self.page).to_have_url("https://practice-automation.com/form-fields/")
 
     def goto_modals(self):
         self.modals_button.click()
+        expect(self.page).to_have_url("https://practice-automation.com/modals/")
     
     def goto_click_events(self):
         self.click_button.click()
+        expect(self.page).to_have_url("https://practice-automation.com/click-events/")
