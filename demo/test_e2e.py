@@ -3,6 +3,7 @@ from playwright.sync_api import Page, expect
 from pages.homepage import homePage as hp
 from pages.formfields import formFields as fp
 from pages.modals import Modals as ml
+from pages.clickevents import clickEvents as ce
 
 
 base_url = "https://practice-automation.com/"
@@ -40,4 +41,6 @@ def test_modals(page: Page):
 def test_click_events(page: Page):
    homepage = hp(page)
    homepage.goto_click_events()
+   ce_page = ce(page)
+   ce_page.click_events_test()
    
