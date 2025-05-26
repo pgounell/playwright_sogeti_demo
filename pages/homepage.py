@@ -8,6 +8,8 @@ class homePage():
         self.form_button= self.page.get_by_role("link", name="Form Fields")
         self.modals_button = self.page.get_by_role("link", name="Modals")
         self.click_button = self.page.get_by_role("link", name="Click Events")
+        self.js_delays_button = self.page.get_by_role("link", name="JavaScript Delays")
+        self.popups_button = self.page.get_by_role("link", name="Popups")
 
 
     def goto_form(self):
@@ -21,3 +23,12 @@ class homePage():
     def goto_click_events(self):
         self.click_button.click()
         expect(self.page).to_have_url("https://practice-automation.com/click-events/")
+
+    def goto_js_delays(self):
+        self.js_delays_button.click()
+        expect(self.page).to_have_url("https://practice-automation.com/javascript-delays/")
+        
+
+    def goto_popups(self):
+        self.popups_button.click()
+        expect(self.page).to_have_url("https://practice-automation.com/popups/")

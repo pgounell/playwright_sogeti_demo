@@ -11,7 +11,6 @@ base_url = "https://practice-automation.com/"
 @pytest.fixture(scope="function", autouse=True)
 def beforeEach(page: Page):
    page.goto(base_url)
-   
    yield
 
 
