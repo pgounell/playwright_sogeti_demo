@@ -18,7 +18,12 @@ def test_form_fields(page: Page):
    homepage.goto_form()
    fieldpage = fp(page)
    fieldpage.input_credentials()
-   
+   fieldpage.checkboxes_test()
+   fieldpage.radio_test()
+   fieldpage.select_list_test()
+   fieldpage.email_and_message_test()
+   fieldpage.submit_button_test()
+
    
 
 
