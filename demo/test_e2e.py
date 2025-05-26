@@ -2,6 +2,7 @@ import pytest
 from playwright.sync_api import Page, expect
 from pages.homepage import homePage as hp
 from pages.formfields import formFields as fp
+from pages.modals import Modals as ml
 
 
 base_url = "https://practice-automation.com/"
@@ -30,6 +31,9 @@ def test_form_fields(page: Page):
 def test_modals(page: Page):
    homepage = hp(page)
    homepage.goto_modals()
+   modalpage = ml(page)
+   modalpage.simple_modal_test()
+   modalpage.form_modal_test()
    
 
 

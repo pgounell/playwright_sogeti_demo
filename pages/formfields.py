@@ -6,6 +6,9 @@ class formFields():
         self.page = page
         self.name_input = self.page.locator("#name-input")
         self.pwd_input = self.page.get_by_label("Password")
+        self.email_field = self.page.locator("xpath=//input[@id='email']")
+        self.message_field = self.page.get_by_placeholder("Enter message here")
+        self.submit_button = self.page.get_by_role("button", name="Submit")
     
     def input_credentials(self):
         expect(self.name_input).to_be_editable()
@@ -33,18 +36,16 @@ class formFields():
             expect(previous_element).not_to_be_checked
 
     def select_list_test(self):
-        options=["Yes", "No", "Undecided"]
-        for list_elements in options:
+        options=["yes", "no", "undecided"]
+        for list_element in options:
             option_list = self.page.locator("#automation")
-            option_list.select_option(value=list_elements)
+            option_list.select_option(value=list_element)
+            expect(option_list).to_have_value(list_element)
 
     def email_and_message_test(self):
-        email_field = self.page.locator("xpath=//input[@id='email']")
-        email_field.fill("jeansogeti@gmail.com")
-        message_field = self.page.get_by_placeholder("Enter message here")
-        message_field.fill("J'adore l'automatisation !")
+        self.email_field.fill("jeansogeti@gmail.com")
+        self.message_field.fill("J'adore l'automatisation !")
 
     def submit_button_test(self):
-        button = self.page.get_by_role("button", name="Submit")
-        button.click()
+        self.submit_button.click()
     
