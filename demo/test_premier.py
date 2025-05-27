@@ -18,7 +18,9 @@ def test_bonne_page(page: Page):
 
 '''
 On commence par une démonstration des différentes stratégies possible pour
-les locators avec Playwright. Ne pas hésiter à utiliser l'inspecteur Playwright !
+les locators avec Playwright. Dans la documentation on peut lire que Playwright s'aligne
+avec une philosophie UX-first. Pour les locators, on doit essayer de les baser sur des élements
+visibles pour l'utilisateur, et réduire les locators spécifiques au code source d'une page.
 '''
 def test_locator(page: Page):
 
@@ -40,7 +42,10 @@ def test_locator(page: Page):
 
     '''
     Il existe plusieurs méthodes de type 'get_by', mais la plus recomandée est 'get_by_role'.
-    De la même manière, il existe beaucoup de roles différents pour identifier les éléments web
+    De la même manière, il existe beaucoup de roles différents pour identifier les éléments web.
+    Ces rôles proviennent des WAI-ARIA roles, définis par les développeurs pour des raisons
+    d'accessibilité. L'usage de get_by_role permet donc donc de tester partiellement l'accessibilité
+    et de respecter la philosophie playwright.
     '''
 
     #Par CSS Selector
@@ -53,7 +58,7 @@ def test_locator(page: Page):
 
     name_input = page.locator("xpath=//input[@id='name-input']")
     name_input.highlight()
-    name_input.fill("John Doe")
+    name_input.fill("Jean Sogeti")
 
 
 
