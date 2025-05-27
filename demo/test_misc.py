@@ -28,3 +28,7 @@ def test_popups(page: Page):
    pop_page.test_confirm_popup()
    pop_page.test_prompt_popup()
 
+def test_sliders(page: Page):
+   homepage = hp(page)
+   homepage.goto_sliders()
+   

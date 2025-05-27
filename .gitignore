@@ -1,3 +1,6 @@
 /venv
 /.vscode
 /demo/__pycache__
+/demo/.pytest_cache
+/.pytest_cache
+/pages/__pycache__

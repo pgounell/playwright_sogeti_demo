@@ -10,6 +10,7 @@ class homePage():
         self.click_button = self.page.get_by_role("link", name="Click Events")
         self.js_delays_button = self.page.get_by_role("link", name="JavaScript Delays")
         self.popups_button = self.page.get_by_role("link", name="Popups")
+        self.sliders_button = self.page.get_by_role("link", name="Sliders")
 
 
     def goto_form(self):
@@ -32,3 +33,9 @@ class homePage():
     def goto_popups(self):
         self.popups_button.click()
         expect(self.page).to_have_url("https://practice-automation.com/popups/")
+
+
+    def goto_sliders(self):
+        self.sliders_button.click()
+        expect(self.page).to_have_url("https://practice-automation.com/slider/")
+

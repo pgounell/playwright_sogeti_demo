@@ -25,4 +25,4 @@ Le dossier **demo** possède les différents fichiers de tests.
 
 
 
-Le dosier **pages** contient les différentes pages de fonctionalité d'AutomateNow, puisque les fichiers de test suivent le design pattern de Page Object Model.
+Le dossier **pages** contient les différentes pages de fonctionalité d'AutomateNow, puisque les fichiers de test suivent le design pattern de Page Object Model.
